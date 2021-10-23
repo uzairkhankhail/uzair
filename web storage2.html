@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function store()
+        {
+            if(('sessionStorage' in window)&& window['SessionStorage']!==null)
+        {
+           var name=document.getElementById('name').value;
+           sessionStorage.getItem('username', name);
+           var data=sessionStorage.getItem('username');
+           sessionStorage.setItem('age', document.getElementById('age').value);
+           var agevalue=parseInt(sessionStorage.getItem('age'));
+           alert(data+'is'+ agevalue+'years old'); 
+        }
+        }
+    </script>
+    </head>
+</body>
+<form name="myform">
+    <label>Enter Name:</label>
+    <input type="text" id="Name">
+    <br/>
+
+    <label>Enter Age:</label>
+    <input type="text" id="Age">
+    <br/>
+
+    <input type="button" value="submit" onclick="store()"/>
+</form>
+</html>
